@@ -4,7 +4,25 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ФСК — Подбор жилья</title>
-<style>
+</head>
+<body>
+
+<header>
+  <div style="color:var(--text-muted); font-size:13px;">Демо-страница опроса</div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Подбор жилья</span>
+  <h1>Помогите нам сделать выбор квартиры <em>ещё удобнее</em></h1>
+  <p>Пройдите короткий опрос о вашем опыте — это займёт пару минут и поможет нам стать лучше.</p>
+</section>
+
+<footer>
+  Тестовая демонстрационная страница. Не является страницей fsk.ru.
+</footer>
+</body>
+
+  <style>
   :root{
     --bg: #FFFFFF;
     --bg-card: #FAFAFA;
@@ -90,45 +108,4 @@
     .hero h1{ font-size: 26px; }
   }
 </style>
-</head>
-<body>
-
-<header>
-  <div style="color:var(--text-muted); font-size:13px;">Демо-страница опроса</div>
-</header>
-
-<section class="hero">
-  <span class="eyebrow">Подбор жилья</span>
-  <h1>Помогите нам сделать выбор квартиры <em>ещё удобнее</em></h1>
-  <p>Пройдите короткий опрос о вашем опыте — это займёт пару минут и поможет нам стать лучше.</p>
-</section>
-
-<footer>
-  Тестовая демонстрационная страница. Не является страницей fsk.ru.
-</footer>
-
-<script>
-  window.mindbox = window.mindbox || function(){ mindbox.queue.push(arguments) };
-  mindbox.queue = mindbox.queue || [];
-  mindbox("create", { endpointId: "fsk.Website" });
-</script>
-<script src="https://api.mindbox.ru/scripts/v1/tracker.js" async></script>
-<script src="https://web-static.mindbox.ru/js/byendpoint/fsk.website.js" async></script>
-
-<script>
-  // прячем плейсхолдер, как только виджет реально отрисовался
-  var ph = document.getElementById('quiz-placeholder');
-  var tries = 0;
-  var iv = setInterval(function(){
-    tries++;
-    var box = document.querySelector('[data-popmechanic-embed] iframe, [data-popmechanic-embed] .popmechanic-is-container *');
-    if (document.querySelector('[data-popmechanic-embed]').children.length > 0) {
-      ph.style.display = 'none';
-      clearInterval(iv);
-    }
-    if (tries > 40) { clearInterval(iv); } // ~20 сек, дальше плейсхолдер просто останется
-  }, 500);
-</script>
-
-</body>
 </html>
